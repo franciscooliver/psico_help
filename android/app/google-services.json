@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1072824396861",
+    "firebase_url": "https://psicohelp-83971.firebaseio.com",
+    "project_id": "psicohelp-83971",
+    "storage_bucket": "psicohelp-83971.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1072824396861:android:0c05c0ddeef3ea8eface54",
+        "android_client_info": {
+          "package_name": "com.flutter.psico_help"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1072824396861-ljhcflsrlkffo1kfcb7chvvqn1n8k4qu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.flutter.psico_help",
+            "certificate_hash": "eeff137d3015946a656209674f9ecdd3185243a2"
+          }
+        },
+        {
+          "client_id": "1072824396861-kqer75inq0itqmln3eb4kg1365g73srl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSvje8oJzrHsoKsyimM-aZiR1-1td_epo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1072824396861-kqer75inq0itqmln3eb4kg1365g73srl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
