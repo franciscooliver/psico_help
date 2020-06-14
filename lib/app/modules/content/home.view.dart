@@ -26,26 +26,24 @@ class _HomeState extends ModularState<Home, ContentController> with Component {
     top = 0.0;
     isRounded = true;
     _scrollController = ScrollController()
-      ..addListener(() => _isAppBarExpanded
-          ? _theme != Consts.end
-              ? setState(
-                  () {
-                    _theme = Consts.end;
-                    isRounded = false;
-                  },
-                )
-              : {}
-          : _theme != Colors.transparent
-              ? setState(() {
-                  _theme = Colors.transparent;
-                  isRounded = true;
-                })
-              : {});
+      ..addListener(
+        () => _isAppBarExpanded
+            ? setState(
+                () {
+                _theme = Consts.end;
+                  isRounded = false;
+                },
+              )
+            : setState(() {
+                _theme = Colors.transparent;
+                isRounded = true;
+              }),
+      );
   }
 
   bool get _isAppBarExpanded {
     return _scrollController.hasClients &&
-        _scrollController.offset > (200 - kToolbarHeight);
+        _scrollController.offset > (180 - kToolbarHeight);
   }
 
   @override
@@ -74,7 +72,7 @@ class _HomeState extends ModularState<Home, ContentController> with Component {
     );
   }
 
-  onTapCard(){
+  onTapCard() {
     print('Chama detalhes do depoimento');
     Navigator.pushNamed(context, '/content/details');
   }

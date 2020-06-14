@@ -8,6 +8,7 @@ class FormCustom implements IFormField {
   final Function validator;
   final EdgeInsets margin;
   final double padding;
+  final borderRadius;
   final controller;
 
   FormCustom(
@@ -15,7 +16,8 @@ class FormCustom implements IFormField {
       @required this.validator,
       this.margin,
       this.padding,
-      this.controller});
+      this.controller,
+      this.borderRadius});
 
   fieldText({Function validator, String hintText, bool obscure}) {
     return TextFormField(
@@ -26,19 +28,19 @@ class FormCustom implements IFormField {
           errorStyle: TextStyle(height: 0.2, fontSize: 15.0),
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Consts.end, width: 2.0),
-            borderRadius: BorderRadius.circular(25.7),
+            borderRadius: BorderRadius.circular(borderRadius != null ? borderRadius : 25.7),
           ),
           border: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.white),
-            borderRadius: BorderRadius.circular(25.7),
+            borderRadius: BorderRadius.circular(borderRadius != null ? borderRadius : 25.7),
           ),
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: Colors.white),
-            borderRadius: BorderRadius.circular(25.7),
+            borderRadius: BorderRadius.circular(borderRadius != null ? borderRadius : 25.7),
           ),
           errorBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Colors.red, width: 2.0),
-            borderRadius: BorderRadius.circular(25.7),
+            borderRadius: BorderRadius.circular(borderRadius != null ? borderRadius : 25.7),
           ),
           
           hintStyle: TextStyle(color: const Color(0xff99a2b3)),

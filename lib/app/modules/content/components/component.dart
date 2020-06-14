@@ -33,6 +33,11 @@ class Component {
             backgroundColor: theme,
             expandedHeight: height * .3,
             pinned: true,
+            leading: IconButton(
+              icon: Icon(Icons.arrow_back_ios, color: Colors.white, size: 18.0,),
+              onPressed: () {
+                Navigator.of(context).pop();
+              }),
             titleSpacing: 0.0,
             flexibleSpace: LayoutBuilder(
                 builder: (BuildContext context, BoxConstraints constraints) {
@@ -46,6 +51,7 @@ class Component {
                     opacity: 1.0,
                     child: Text(
                       'Depoimentos',
+                      style: TextStyle(color: Colors.white),
                     )),
                 background: Image.asset('assets/images/top_content_page03.png'),
               );
