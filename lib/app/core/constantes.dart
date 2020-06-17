@@ -15,8 +15,13 @@ class Consts {
   static String loginText = "Entrar";
   static String loginGoogleText = "Entrar com o Google";
   static String signupButtonText = "Salvar";
+  static String contentCreateButtonText = "Enviar Depoimento";
   static double paddingALert = 16.0;
-  static double avatarRadius = 30.0;
+  static double avatarRadius = 35.0;
+
+  // Paths
+  static String pathImages = "assets/images/";
+
 
   // Keys SharedPreferences
   static String isADMIN = "IS_ADMIN";

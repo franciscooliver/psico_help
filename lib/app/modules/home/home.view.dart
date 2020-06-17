@@ -1,7 +1,5 @@
 import 'dart:ui';
 
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
@@ -10,6 +8,9 @@ import 'package:psico_help/app/core/constantes.dart';
 import 'package:psico_help/app/core/interfaces/auth_repository.dart';
 import 'package:psico_help/app/core/interfaces/preferences_repository.dart';
 import 'package:psico_help/app/model/content.model.dart';
+import 'package:psico_help/app/model/testimony.model.dart';
+import 'package:psico_help/app/modules/home/widgets/child_content_details_tips.dart';
+
 import 'package:psico_help/app/widgets/card.dart';
 import 'package:psico_help/app/modules/home/widgets/options.dart';
 
@@ -20,7 +21,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends ModularState<Home, ContentController> {
   Option _selectedChoice = options[0];
-
+  
   @override
   void initState() {
     super.initState();
@@ -105,9 +106,15 @@ class _HomeState extends ModularState<Home, ContentController> {
         body: _body());
   }
 
-  onTapCard() {
-    Navigator.pushNamed(context, '/content/details');
+  onTapCard({Content content, Testimony testimony}) {
+    // Navigator.to.pushNamed('/content/details', ar);
+    List<dynamic> dataArgs = [
+      ChildContentDetailsTips(content: content ?? null,),
+      content
+    ];
+    Modular.to.pushNamed('/content/details', arguments: dataArgs);
   }
+
 
   _body() {
     return Container(
@@ -141,6 +148,7 @@ class _HomeState extends ModularState<Home, ContentController> {
                 index: index,
                 isThreeLine: true,
                 showRating: true,
+                content: content,
                 onTapCard: onTapCard,
               );
             });

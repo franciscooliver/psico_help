@@ -7,6 +7,7 @@ class CustomButtom extends StatelessWidget {
   final maxHeight;
   final maxWidth;
   final height;
+  final double marginBottom;
   final buttonText;
   final isLoading;
   final Function onPressed;
@@ -19,6 +20,7 @@ class CustomButtom extends StatelessWidget {
       this.maxHeight,
       this.maxWidth,
       this.height,
+      this.marginBottom,
       @required this.buttonText,
       this.onPressed,
       this.bgColor,
@@ -30,7 +32,7 @@ class CustomButtom extends StatelessWidget {
     return Container(
       height: height,
       width: maxWidth,
-      margin: const EdgeInsets.only(top: 14.0),
+      margin: EdgeInsets.only(top: 14.0, bottom: marginBottom ?? 0.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(27.5),
         boxShadow: [

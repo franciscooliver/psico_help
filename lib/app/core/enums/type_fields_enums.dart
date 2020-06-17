@@ -1,3 +1,3 @@
 enum TypeFields {
-  Text, Checkbox, Date, Select
+  Text, Checkbox, Date, Select, Multiline
 }

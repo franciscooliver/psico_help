@@ -41,7 +41,7 @@ mixin _$ContentController on _ContentControllerBase, Store {
   @override
   String toString() {
     return '''
-contentList: ${contentList}
+    contentList: ${contentList}
     ''';
   }
 }

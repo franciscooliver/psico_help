@@ -6,7 +6,7 @@ import 'package:psico_help/app/core/enums/type_fields_enums.dart';
 import 'package:psico_help/app/core/interfaces/user_repository.dart';
 import 'package:psico_help/app/model/user.model.dart';
 import 'package:psico_help/app/modules/login/text_fields.dart';
-import 'package:psico_help/app/widgets/CustomDialog.dart';
+import 'package:psico_help/app/widgets/custom_dialog.dart';
 import 'package:psico_help/app/widgets/button.dart';
 import 'package:psico_help/app/widgets/form_custom.dart';
 import 'package:psico_help/app/widgets/logo_content.dart';

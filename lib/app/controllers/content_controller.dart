@@ -28,8 +28,16 @@ abstract class _ContentControllerBase with Store {
 
   @action
   getTestimonys(){
-    testimonyList = repository.getTestimonys().asObservable();
+    testimonyList = repository.getTestimonys().asObservable();    
     // print(contents.data);
   }
+
+  @action
+  Future setTestimony(Testimony testimony) async {
+    var res = await this.repository.saveTestimony(testimony);
+    return res.object;
+  }
+
+  
 
 }

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:psico_help/app/core/constantes.dart';
+import 'package:psico_help/app/model/content.model.dart';
 import 'package:psico_help/app/model/testimony.model.dart';
+import 'package:psico_help/app/modules/content/widgets/child_testimonys_details.dart';
 import 'package:psico_help/app/widgets/card.dart';
 
 class Component {
-
+  BuildContext ctx;
 
   BoxDecoration decoration() {
     return BoxDecoration(
@@ -17,14 +20,15 @@ class Component {
   }
 
   Widget nextedScroolView({
+    ctx,
     scrollController,
     streamController,
     theme,
     height,
     top,
-    isRounded,
-    onTapCard
+    isRounded
   }) {
+    this.ctx = ctx;
     return NestedScrollView(
       controller: scrollController,
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -88,6 +92,7 @@ class Component {
                     dense: true,
                     isThreeLine: true,
                     title: '${testimony.name}$age',
+                    testimony: testimony,
                     description: testimony.body,
                     onTapCard: onTapCard);
               },
@@ -97,5 +102,14 @@ class Component {
       ),
     );
   }
+
+  onTapCard({Content content, Testimony testimony}) {
+    List<dynamic> dataArgs = [
+      ChildTestimonysDetails(testimony: testimony,),
+      testimony
+    ];
+    Navigator.pushNamed(ctx, '/content/details', arguments: dataArgs);
+  }
+
 
 }

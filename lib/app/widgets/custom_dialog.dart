@@ -4,7 +4,7 @@ import 'package:psico_help/app/core/constantes.dart';
 class CustomDialog extends StatelessWidget {
   final String title, message, positiveBtnText, negativeBtnText;
   final bool showPositiveBtn;
-  final image;
+  final Widget topChild;
   final isLoading;
   final Color color;
   final Function positiveBtnOnPressed;
@@ -16,7 +16,7 @@ class CustomDialog extends StatelessWidget {
       @required this.positiveBtnText,
       this.negativeBtnText,
       this.showPositiveBtn,
-      this.image,
+      this.topChild,
       this.color,
       this.isLoading,
       this.positiveBtnOnPressed})
@@ -115,6 +115,7 @@ class CustomDialog extends StatelessWidget {
                           },
                           child: Text(
                             positiveBtnText,
+                            style: TextStyle(fontSize: 13.0),
                           ),
                         ),
                       ),
@@ -125,15 +126,17 @@ class CustomDialog extends StatelessWidget {
             ],
           ),
         ),
+
+        // Top image
         Visibility(
-          visible: image != null,
+          visible: topChild != null,
           child: Positioned(
             left: Consts.paddingALert,
             right: Consts.paddingALert,
             child: CircleAvatar(
               backgroundColor: Colors.white,
               radius: Consts.avatarRadius,
-              backgroundImage: image,
+              child: topChild,
             ),
           ),
         ),

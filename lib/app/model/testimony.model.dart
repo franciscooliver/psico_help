@@ -8,6 +8,8 @@ class Testimony {
   int age;
   String body;
   String testimonyDate;
+  String userId;
+  bool active;
 
 
   Testimony({
@@ -15,7 +17,9 @@ class Testimony {
     this.age,
     this.body,
     this.testimonyDate,
-    this.documentId
+    this.documentId,
+    this.userId,
+    this.active
   });
 
   factory Testimony.fromDocument(DocumentSnapshot doc) {
@@ -24,7 +28,9 @@ class Testimony {
       age: doc['age'],
       body: doc['body'],
       testimonyDate: doc['testimonyDate'],
-      documentId: doc.documentID
+      documentId: doc.documentID,
+      userId: doc['userId'],
+      active: doc['active']
     );
   }
 
@@ -33,12 +39,16 @@ class Testimony {
     int age,
     String body,
     String testimonyDate,
+    String userId,
+    bool active,
   }) {
     return Testimony(
       name: name ?? this.name,
       age: age ?? this.age,
       body: body ?? this.body,
       testimonyDate: testimonyDate ?? this.testimonyDate,
+      userId: userId ?? this.userId,
+      active: active ?? this.active,
     );
   }
 
@@ -48,6 +58,8 @@ class Testimony {
       'age': age,
       'body': body,
       'testimonyDate': testimonyDate,
+      'userId': userId,
+      'active': active
     };
   }
 
@@ -59,6 +71,8 @@ class Testimony {
       age: map['age'],
       body: map['body'],
       testimonyDate: map['testimonyDate'],
+      userId: map['userId'],
+      active: map['active'],
     );
   }
 

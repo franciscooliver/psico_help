@@ -1,13 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Content {
+  String documentId;
   String title;
   String shortDescription;
   String content;
   int rating;
   final DocumentReference reference;
 
-  Content({this.reference, this.title, this.shortDescription, this.content, this.rating});
+  Content({this.reference, this.title, this.shortDescription, this.content, this.rating, this.documentId});
 
   factory Content.fromDocument(DocumentSnapshot doc) {
     return Content(
@@ -15,7 +16,7 @@ class Content {
       shortDescription: doc['shortDescription'],
       content: doc['content'],
       rating: doc['rating'],
-      reference: doc.reference
+      documentId: doc.documentID
     );
   }
 
@@ -31,6 +32,7 @@ class Content {
       'shortDescription': shortDescription,
       'content': content,
       'rating': rating,
+      'documentId': documentId,
     };
   }
 }

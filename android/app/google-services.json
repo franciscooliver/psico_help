@@ -15,19 +15,11 @@
       },
       "oauth_client": [
         {
-          "client_id": "1072824396861-963smh60s24gl099necvpg9i364ovpp8.apps.googleusercontent.com",
+          "client_id": "1072824396861-k2sgfak82ukd1bdsq4bdktsmtuvghqq1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.flutter.psico_help",
-            "certificate_hash": "b9c4d5bc1aaed6a4359ac1a959a3fa52ea92cf20"
-          }
-        },
-        {
-          "client_id": "1072824396861-5kmljb6h5e19vnatdv5gop8ikmmia6pb.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.flutter.psico_help",
-            "certificate_hash": "44a38653a1d46567e1fdb4491a9ff9822d86d671"
+            "certificate_hash": "f013d89afdaf71972785128962ea996f574f4d68"
           }
         },
         {

@@ -68,12 +68,7 @@ class _HomeState extends ModularState<Home, ContentController> with Component {
           isRounded: isRounded,
           theme: _theme,
           top: top,
-          onTapCard: onTapCard),
+          ctx: context),
     );
-  }
-
-  onTapCard() {
-    print('Chama detalhes do depoimento');
-    Navigator.pushNamed(context, '/content/details');
   }
 }

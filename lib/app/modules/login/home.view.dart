@@ -10,7 +10,7 @@ import 'package:psico_help/app/core/interfaces/auth_repository.dart';
 import 'package:psico_help/app/core/interfaces/preferences_repository.dart';
 import 'package:psico_help/app/modules/login/components/login.component.dart';
 import 'package:psico_help/app/modules/login/text_fields.dart';
-import 'package:psico_help/app/widgets/CustomDialog.dart';
+import 'package:psico_help/app/widgets/custom_dialog.dart';
 import 'package:psico_help/app/widgets/form_custom.dart';
 
 class Home extends StatefulWidget {
@@ -38,22 +38,27 @@ class _HomeState extends State<Home> with LoginComponent {
     return Scaffold(body: _body());
   }
 
+  
   Widget _body() {
-    validator(val) {
+
+    validator(String val) {
       if (val == "") return "Campo obrigatório";
     }
+
 
     FormCustom formFieldEmail = FormCustom(
         hintText: "Seu email",
         margin: EdgeInsets.only(bottom: 15.0),
         validator: validator,
-        controller: emailCtrl);
+        controller: emailCtrl,
+        minLines: 1);
 
     FormCustom formFieldPassword = FormCustom(
         hintText: "Sua senha",
         margin: EdgeInsets.only(bottom: 15.0),
         validator: validator,
-        controller: passCtrl);
+        controller: passCtrl,
+        minLines: 1);
 
     List<Widget> fields = [
       formFieldEmail.formFieldBuilder(type: TypeFields.Text, obscure: false),
@@ -160,7 +165,7 @@ class _HomeState extends State<Home> with LoginComponent {
               print(res.object),
               Modular.get<IPreferences>().setUser('ID', res.object.uid).then(
                   (value) => {
-                        value.object ? Navigator.pushNamed(context, '/') : null,
+                        value.object ? Navigator.pushNamed(context, '/home') : null,
                         _setStatusAdmin()
                       })
             }

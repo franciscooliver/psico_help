@@ -4,6 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:psico_help/app/app.dart';
 import 'package:psico_help/app/core/interfaces/auth_repository.dart';
 import 'package:psico_help/app/core/repositories/auth_repository.dart';
+import 'package:psico_help/app/modules/home/splash_screen.dart';
 
 
 import 'core/interfaces/preferences_repository.dart';
@@ -29,15 +30,19 @@ class AppModule extends MainModule{
 
   @override
   List<Router> get routers => [
-    Router('/', 
+    Router('/',
+      child: (_,__) => CustomSplashScreen(),
+    ),
+    Router(
+      '/home',
       module: HomeModule(), 
       transition: TransitionType.fadeIn
     ),
     Router(
     '/content',
     module: ContentModule(),
+    transition: TransitionType.fadeIn
   ),
-    Router('/home', module: LoginModule()),
     Router('/signin', module: LoginModule()),
     Router('/signup', module: SignupModule()),
   ];
